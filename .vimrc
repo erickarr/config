@@ -31,3 +31,22 @@ set wildmenu
 	"zc - closes fold
 	"zm - increases auto fold depth
 	"zr - decreases auto fold depth
+
+"Configuring vim-airline
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#left_sep = ' '
+	let g:airline#extensions#tabline#left_alt_sep = '|'
+
+	let g:airline_mode_map = {
+	  \ '__' : '-',
+	  \ 'n'  : 'N',
+	  \ 'i'  : 'I',
+	  \ 'R'  : 'R',
+	  \ 'c'  : 'C',
+	  \ 'v'  : 'V',
+	  \ 'V'  : 'V',
+	  \ '' : 'V',
+	  \ 's'  : 'S',
+	  \ 'S'  : 'S',
+	  \ '' : 'S',
+	  \ }
