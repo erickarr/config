@@ -1,3 +1,4 @@
+"Add: alias svim=sudo vim
 syntax enable
 
 "Pathogen configuration
