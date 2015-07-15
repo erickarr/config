@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#To be added: -automatically change gnome-terminal to solarized dark theme, and solarized color palette
+#			  -change gnome-terminal to use dark theme
+
 #Install pathogen mod and modules
 function pathogen_init {
 	printf "Ensure package 'curl' is already installed\n"
@@ -19,6 +22,8 @@ function pathogen_init {
 
 	#To be finished, prints the repository as desired, doesn't have full path to execute
 	#sed 's/.*\///' modules.config
+
+	cd
 }
 
 #Put the .bashrc file in place
@@ -44,6 +49,6 @@ function vimrc_init {
 
 }
 
-#pathogen_init
+pathogen_init
 bashrc_init
 vimrc_init
