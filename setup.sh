@@ -52,3 +52,5 @@ function vimrc_init {
 pathogen_init
 bashrc_init
 vimrc_init
+
+echo "Warning! Run git_setup.sh if git has not been initialized on your computer."
