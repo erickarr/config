@@ -3,6 +3,11 @@
 #To be added: -automatically change gnome-terminal to solarized dark theme, and solarized color palette
 #			  -change gnome-terminal to use dark theme
 
+# Variables
+DEST=~/ #Home directory
+VIM_CONF=.vimrc #Name of vim configuration
+BASH_CONF=.bashrc #Name of bash configuration
+
 #Install pathogen mod and modules
 function pathogen_init {
 	printf "Ensure package 'curl' is already installed\n"
@@ -28,24 +33,28 @@ function pathogen_init {
 
 #Put the .bashrc file in place
 function bashrc_init {
-	printf "Making a backup copy of the current .bashrc file\n"
+	if [ ${DEST}${BASH_CONF} -ot ${BASH_CONF} ]; then
+		printf "Making a backup copy of the current .bashrc file\n"
 
-	cp -v ~/.bashrc ~/.bashrc.backup
+		cp -v ~/.bashrc ~/.bashrc.backup
 
-	printf "Creating a hard link to the new bash file\n"
+		printf "Creating a hard link to the new bash file\n"
 
-	ln -fv `pwd`/.bashrc ~/.bashrc 
+		ln -fv `pwd`/.bashrc ~/.bashrc 
+	fi
 }
 
 #Put the .vimrc file in place
 function vimrc_init {
-	printf "\nMaking a backup copy of the current .vimrc file\n"
+	if [ ${DEST}${VIM_CONF} -ot ${VIM_CONF} ]; then
+		printf "\nMaking a backup copy of the current .vimrc file\n"
 
-	cp -v ~/.vimrc ~/.vimrc.backup
+		cp -v ${DEST}.vimrc ~/.vimrc.backup
 
-	printf "Creating a hard link to the new vim configuration file\n"
+		printf "Creating a hard link to the new vim configuration file\n"
 
-	ln -fv `pwd`/.vimrc ~/.vimrc 
+		ln -fv `pwd`/.vimrc ~/.vimrc 
+	fi
 
 }
 
